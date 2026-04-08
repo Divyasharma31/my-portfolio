@@ -114,9 +114,11 @@ const { scrollYProgress } = useScroll();
         "C++",
         "Java",
         "Python",
+        "Flask",
         "React",
         "Machine Learning",
-        "AI"
+        "GenAI",
+        "AgenticAI"
       ].map((skill, index) => (
         <motion.span
           key={index}
@@ -152,36 +154,38 @@ const { scrollYProgress } = useScroll();
 
       {[
         {
-          title: "AI Mini Compiler",
-          desc: "Compiler with AI-based error correction for C-like language",
-          link: "#"
-        },
-        {
-          title: "DNA Sequence Matcher",
-          desc: "Real-time DNA pattern matching system with GUI",
-          link: "#"
-        },
-        {
-          title: "Cybersecurity Toolkit",
-          desc: "Collection of scripts for ethical hacking & security testing",
-          link: "#"
-        },
-        {
-          title: "Portfolio Website",
-          desc: "Modern developer portfolio built with Next.js & Tailwind",
-          link: "#"
-        }
+    title: "Disaster Prediction using Drone Based System",
+    desc: "End-to-end disaster management system integrating drone data, ML models (Faster R-CNN, MobileNet), and a React dashboard for landslide/flood detection and rescue path optimization.",
+    link: "#"
+  },
+  {
+  title: "Cyber Doctor",
+  desc: "RAG-based medical assistance system that retrieves relevant medical knowledge and generates context-aware responses for diagnosis support.",
+  link: "https://github.com/Divyasharma31/Cyber_doctor"
+},
+       {
+  title: "Blood Donation Management System",
+  desc: "Flask-based web application that connects blood donors with hospitals and patients, enabling efficient donor matching and real-time availability tracking.",
+  link: "https://github.com/Divyasharma31/Blood-Donation-System"
+},
+{
+  title: "Breast Cancer Detection",
+  desc: "Deep learning-based system for detecting breast cancer using medical imaging and classification models.",
+  link: "https://github.com/Divyasharma31/Breast_Cancer_Detection"
+}
+       
+        
       ].map((project, index) => (
         <motion.a
-          key={index}
-          href={project.link}
-          target="_blank"
-          whileHover={{ scale: 1.05 }}
-          className="block p-6 bg-white/10 border border-white/20 
-          rounded-2xl backdrop-blur-lg text-left 
-	  hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] 
-	  transition duration-300"
-        >
+  key={index}
+  href={project.link}
+  target="_blank"
+  whileHover={{ scale: 1.05 }}
+  className="group block p-6 bg-white/10 border border-white/20 
+  rounded-2xl backdrop-blur-lg text-left 
+  hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] 
+  transition duration-300"
+>
           <h3 className="text-xl font-semibold mb-2 group-hover:text-white">
        
             {project.title}
