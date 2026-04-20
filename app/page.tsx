@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -7,16 +8,31 @@ import { TypeAnimation } from "react-type-animation";
 import { useScroll } from "framer-motion";
 
 export default function Home() {
+
+
 useEffect(() => {
   const glow = document.createElement("div");
   glow.className = "cursor-glow";
+
   document.body.appendChild(glow);
 
-  window.addEventListener("mousemove", (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
-  });
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    if (glow.parentNode) {
+      glow.parentNode.removeChild(glow);
+    }
+  };
 }, []);
+
+
+
 const { scrollYProgress } = useScroll();
   return (
     <main className="bg-black text-white">
